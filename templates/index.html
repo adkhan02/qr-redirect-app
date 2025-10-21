@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QR Redirect Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔗 QR Redirect Generator</h1>
+        <form method="POST">
+            <input type="text" name="share_link" placeholder="Paste Google Drive or OneDrive link" required>
+            <button type="submit">Generate QR Code</button>
+        </form>
+
+        {% if qr_filename %}
+        <div class="qr-section">
+            <h2>Your QR Code:</h2>
+            <img src="/static/qr/{{ qr_filename }}" alt="QR Code">
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
